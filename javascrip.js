@@ -263,3 +263,22 @@ canvas.addEventListener("mouseup", function (e) {
 });
 // once the window loads, we are ready for some fireworks!
 window.onload = loop;
+
+// Pháo hoa
+
+//Showslide
+var slide = document.querySelectorAll(".img img");
+var current = 0;
+function showSlide() {
+  var heightImg = slide[0].offsetHeight;
+  slide.forEach((item) => {
+    item.style.transform = `translateY(${heightImg * -1 * current}px)`;
+  });
+  current++;
+  console.log(heightImg);
+  if (current >= slide.length) {
+    current = 0;
+  }
+}
+showSlide();
+setInterval(showSlide, 2000);
