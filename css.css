@@ -310,8 +310,8 @@ body {
     }
     .img {
       top: 4px;
-      width: 83%;
-      left: -24px;
+      width: 100%;
+      left: 0;
       box-shadow: 0px -0px 10px rgb(255, 67, 67);
       img {
         width: 100%;
