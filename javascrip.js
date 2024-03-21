@@ -285,7 +285,7 @@ if (window.matchMedia("(max-width:600px)").matches) {
 
 // click mo hop qua
 var to = "Happy BirthDay!";
-var gift_url = "https://duchung9396.github.io/huynhbaonhi/";
+var gift_url = "https://duchung9396.github.io/hpbdbuihaiily/";
 var gift_image_url = "./gift.jpg";
 
 var nametag = document.getElementById("nametag");
