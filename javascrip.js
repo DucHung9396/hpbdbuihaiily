@@ -267,18 +267,62 @@ window.onload = loop;
 // Pháo hoa
 
 //Showslide
-var slide = document.querySelectorAll(".img img");
-var current = 0;
-function showSlide() {
-  var heightImg = slide[0].offsetHeight;
-  slide.forEach((item) => {
-    item.style.transform = `translateY(${heightImg * -1 * current}px)`;
-  });
-  current++;
-  console.log(heightImg);
-  if (current >= slide.length) {
-    current = 0;
+if (window.matchMedia("(max-width:600px)").matches) {
+  var slide = document.querySelectorAll(".img img");
+  var current = 0;
+  function showSlide() {
+    var heightImg = slide[0].offsetHeight;
+    slide.forEach((item) => {
+      item.style.transform = `translateY(${heightImg * -1 * current}px)`;
+    });
+    current++;
+    if (current >= slide.length) {
+      current = 0;
+    }
   }
+  setInterval(showSlide, 2000);
 }
-showSlide();
-setInterval(showSlide, 2000);
+
+// click mo hop qua
+var to = "Happy BirthDay!";
+var gift_url = "https://duchung9396.github.io/huynhbaonhi/";
+var gift_image_url = "./gift.jpg";
+
+var nametag = document.getElementById("nametag");
+var present = document.getElementById("present");
+var presentImage = document.getElementById("present-image");
+
+function init() {
+  var _giftLink, _giftImg;
+
+  if (gift_url) {
+    _giftLink = document.createElement("a");
+    _giftLink.href = gift_url;
+    _giftLink.target = "_blank";
+    presentImage.appendChild(_giftLink);
+  }
+
+  if (gift_image_url) {
+    _giftImg = document.createElement("img");
+    _giftImg.src = gift_image_url;
+    if (_giftLink) {
+      _giftLink.appendChild(_giftImg);
+    } else {
+      presentImage.appendChild(_giftImg);
+    }
+  }
+
+  present.addEventListener(
+    "click",
+    function (e) {
+      var an = document.querySelector(".info-text");
+      an.style.display = "none";
+      present.classList.toggle("open");
+    },
+    false
+  );
+
+  nametag.innerText = to;
+}
+
+init();
