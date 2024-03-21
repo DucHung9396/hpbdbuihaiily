@@ -391,7 +391,7 @@ body {
       position: absolute;
       left: 4%;
       top: 110%;
-      width: 30%;
+      width: 35%;
     }
     .img {
       display: flex;
@@ -413,7 +413,7 @@ body {
     left: 10px;
   }
   section {
-    top: 75%;
+    top: 65%;
     left: -60%;
   }
 }
